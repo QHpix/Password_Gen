@@ -7,7 +7,7 @@ char chrs[] = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!_"
 
 int main()
 {
-	int pl, len = strlen(chrs), r, i;
+	int pl, len = strlen(chrs), r, i, psl;
 	srand(time(NULL));
 	char *passw;
 	printf("Enter the length of the password: ");
@@ -19,5 +19,8 @@ int main()
 		passw[i] = chrs[r];
 	}
 	printf("%s\n", passw);
+	psl = strlen(passw);
+	free(passw);
+	printf("Length is %d\n", psl);
 	return 0;
 }
